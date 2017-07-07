@@ -3,15 +3,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # take the params from the form (email/pass)
-
-    if auth_was_success
-      
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to '/'
     else
-      render :new
+    # If user's login doesn't work, send them back to the login form.
+      redirect_to '/session/new'
     end
   end
 
   def destroy
+    session[:user_id] = nil
+    redirect_to '/session/new'
   end
 end

@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-## Final Product 
+## Preview of Product 
 
 !["Screenshot of the home page"](https://github.com/escape-velocity/jungle-rails/blob/master/images/Home%20page%20with%20signed%20in%20user.png)
 !["Screenshot of the Payment pop up"](https://github.com/escape-velocity/jungle-rails/blob/master/images/Order%20pop%20up%20for%20credit%20card.png)

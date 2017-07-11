@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create, :new]
+  end
   resources :categories, only: [:show]
+
 
   resource :cart, only: [:show] do
     put    :add_item
@@ -18,7 +21,8 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
+
   resource :session, only: [:new, :destroy, :create]
 end
 

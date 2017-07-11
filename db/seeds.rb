@@ -132,5 +132,24 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "creating Reviews ..."
+
+User.destroy_all
+
+ User.create!({
+   name: 'bill',
+    email: 'bill@bill.com',
+    password_digest: '1234'
+    })
+
+ Review.destroy_all
+
+ Review.create!({
+    product_id: 1,
+    user_id: 1,
+    description: 'Nice thing!',
+    rating: 4
+    })
 
 puts "DONE!"
+
